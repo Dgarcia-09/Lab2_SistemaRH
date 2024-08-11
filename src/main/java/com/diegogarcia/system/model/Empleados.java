@@ -9,10 +9,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+// Crea las entidades de la base de datos automaticamente
 @Entity
+
+// Genera lo getters and setter
 @Data
+
+// constructor vacio
 @NoArgsConstructor
+
+// constructor lleno
 @AllArgsConstructor
+
+//Le da los valores a los atributos
 @ToString
 
 

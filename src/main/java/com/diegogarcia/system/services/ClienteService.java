@@ -32,8 +32,7 @@ public class ClienteService implements IClienteService {
 
     @Override
     public Cliente guardarCliente(Cliente cliente) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'guardarCliente'");
+        return clienteRepository.save(cliente);
     }
 
     @Override

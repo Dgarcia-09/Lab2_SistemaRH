@@ -2,14 +2,23 @@ package com.diegogarcia.system.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.diegogarcia.system.model.Empleados;
+import com.diegogarcia.system.repository.EmpleadoRepository;
+
+@Service
 
 public class EmpleadoService implements IEmpleadoService{
 
+    @Autowired
+
+    private EmpleadoRepository empleadoRepository;
+
     @Override
     public List<Empleados> listarEmpleados() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listarEmpleados'");
+        return(empleadoRepository.findAll());
     }
 
     @Override

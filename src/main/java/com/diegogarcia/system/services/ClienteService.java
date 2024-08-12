@@ -1,0 +1,43 @@
+package com.diegogarcia.system.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.diegogarcia.system.model.Cliente;
+import com.diegogarcia.system.repository.ClienteRepository;
+
+@Service
+
+public class ClienteService implements IClienteService {
+
+
+    @Autowired
+
+    private ClienteRepository clienteRepository;
+
+    @Override
+    public List<Cliente> listarClientes() {
+    return(clienteRepository.findAll());
+    }
+
+    @Override
+    public Cliente buscarCliente(Integer idCliente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarCliente'");
+    }
+
+    @Override
+    public Cliente guardarCliente(Cliente cliente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'guardarCliente'");
+    }
+
+    @Override
+    public void eliminarCliente(Cliente cliente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminarCliente'");
+    }
+
+}

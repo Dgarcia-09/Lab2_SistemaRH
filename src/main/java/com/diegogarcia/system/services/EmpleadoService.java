@@ -22,9 +22,12 @@ public class EmpleadoService implements IEmpleadoService{
     }
 
     @Override
-    public Empleados buscarEmpleado(Integer idEmpelado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarEmpleado'");
+    public Empleados buscarEmpleado(Integer idEmpleado) {
+
+        Empleados empleados = empleadoRepository.findById(idEmpleado).orElse(null);
+        
+
+        return empleados;
     }
 
     @Override

@@ -8,7 +8,7 @@ public interface IEmpleadoService {
 
     public List<Empleados> listarEmpleados();
 
-    public Empleados buscarEmpleado (Integer idEmpelado);
+    public Empleados buscarEmpleado (Integer idEmpleado);
 
     public Empleados guardarEmpleado (Empleados empleados);
 

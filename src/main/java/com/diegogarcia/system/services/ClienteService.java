@@ -24,8 +24,10 @@ public class ClienteService implements IClienteService {
 
     @Override
     public Cliente buscarCliente(Integer idCliente) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarCliente'");
+
+        Cliente cliente = clienteRepository.findById(idCliente).orElse(null);
+        return cliente;
+    
     }
 
     @Override

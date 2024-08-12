@@ -37,8 +37,6 @@ public class ClienteService implements IClienteService {
 
     @Override
     public void eliminarCliente(Cliente cliente) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminarCliente'");
+    clienteRepository.delete(cliente);
     }
-
 }

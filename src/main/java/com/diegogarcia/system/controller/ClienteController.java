@@ -1,12 +1,15 @@
 package com.diegogarcia.system.controller;
 
 
+import java.net.ResponseCache;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,9 +45,20 @@ public class ClienteController {
 
     @PostMapping("/clientesA")
 
-    public Cliente agregarCliente(@RequestBody Cliente cliente){
+    public Cliente agregarCliente(@RequestBody Cliente cliente) {
         logger.info("Cliente agregado");
         return iClienteService.guardarCliente(cliente);
     }
+    
+
+
+    @GetMapping("/clientes/{id}")
+
+    public ResponseEntity<Cliente> buscarCliente(@PathVariable Integer id) {
+        
+
+        Empleados empleados = iClienteService
+    }
+
 
 }

@@ -61,6 +61,8 @@ public class EmpleadoController {
         return ResponseEntity.ok(empleados);
     }
 
+    
+
     @PutMapping("/empleados/{id}")
     public ResponseEntity<Empleados> editarEmpleados(@PathVariable Integer id,
             @RequestBody Empleados empleadosRecibido) {

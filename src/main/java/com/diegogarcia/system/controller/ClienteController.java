@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,6 +37,14 @@ public class ClienteController {
         cliente2.forEach((cliente -> logger.info(cliente.toString())));
         return cliente2;
 
+    }
+
+
+    @PostMapping("/clientesA")
+
+    public Cliente agregarCliente(@RequestBody Cliente cliente){
+        logger.info("Cliente agregado");
+        return iClienteService.guardarCliente(cliente);
     }
 
 }

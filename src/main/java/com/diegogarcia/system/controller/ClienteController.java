@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,7 +53,7 @@ public class ClienteController {
     
 
 
-    @GetMapping("/empleados/{id}")
+    @GetMapping("/clientes/{id}")
 
     public ResponseEntity<Cliente> buscarCliente(@PathVariable Integer id) {
         Cliente cliente = iClienteService.buscarCliente(id);
@@ -61,11 +62,19 @@ public class ClienteController {
         return ResponseEntity.ok(cliente);
     }
 
-    
+    @PutMapping("/clientes/{id}")
+    public ResponseEntity<Cliente> editarCliente(@PathVariable Integer id, @RequestBody Cliente clienteRecibido) {
+        Cliente cliente = iClienteService.buscarCliente(id);
+        if (cliente == null)
+            throw new ClienteException("El id recibido no existe");
 
-
-
-
+        cliente.setNombreCliente(clienteRecibido.getNombreCliente());
+        cliente.setCorreoCliente(clienteRecibido.getCorreoCliente());
+        cliente.setDireccionCliente(clienteRecibido.getDireccionCliente());
+        cliente.setTipo(clienteRecibido.getTipo());
+        iClienteService.guardarCliente(cliente);
+        return ResponseEntity.ok(cliente);
+    }
 
 
 

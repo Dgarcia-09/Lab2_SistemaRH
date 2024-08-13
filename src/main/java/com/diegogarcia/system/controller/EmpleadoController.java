@@ -61,14 +61,14 @@ public class EmpleadoController {
         return ResponseEntity.ok(empleados);
     }
 
-    
+
 
     @PutMapping("/empleados/{id}")
     public ResponseEntity<Empleados> editarEmpleados(@PathVariable Integer id,
             @RequestBody Empleados empleadosRecibido) {
         Empleados empleados = iEmpleadoService.buscarEmpleado(id);
         if (empleados == null)
-            throw new EmpleadoException("El id recibido no existe");
+        throw new EmpleadoException("El id recibido no existe");
         empleados.setDpi(empleadosRecibido.getDpi());
         empleados.setNombreCompleto(empleadosRecibido.getNombreCompleto());
         empleados.setPuesto(empleadosRecibido.getPuesto());

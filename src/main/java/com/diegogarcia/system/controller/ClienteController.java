@@ -56,7 +56,7 @@ public class ClienteController {
     
 
 
-    @GetMapping("/clientes/{id}")
+    @GetMapping("/clientesb/{id}")
 
     public ResponseEntity<Cliente> buscarCliente(@PathVariable Integer id) {
         Cliente cliente = iClienteService.buscarCliente(id);
@@ -65,7 +65,7 @@ public class ClienteController {
         return ResponseEntity.ok(cliente);
     }
 
-    @PutMapping("/clientes/{id}")
+    @PutMapping("/clientesV/{id}")
     public ResponseEntity<Cliente> editarCliente(@PathVariable Integer id, @RequestBody Cliente clienteRecibido) {
         Cliente cliente = iClienteService.buscarCliente(id);
         if (cliente == null)
@@ -80,7 +80,7 @@ public class ClienteController {
     }
 
 
-    @DeleteMapping("/clientes/{id}")
+    @DeleteMapping("/clientesE/{id}")
 
     public ResponseEntity<Map<String, Boolean>> eliminarCliente(@PathVariable Integer id) {
         Cliente cliente = iClienteService.buscarCliente(id);
